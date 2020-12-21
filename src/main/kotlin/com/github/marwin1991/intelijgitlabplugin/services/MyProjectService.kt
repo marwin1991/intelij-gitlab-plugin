@@ -1,7 +1,7 @@
-package org.jetbrains.plugins.template.services
+package com.github.marwin1991.intelijgitlabplugin.services
 
 import com.intellij.openapi.project.Project
-import org.jetbrains.plugins.template.MyBundle
+import com.github.marwin1991.intelijgitlabplugin.MyBundle
 
 class MyProjectService(project: Project) {
 

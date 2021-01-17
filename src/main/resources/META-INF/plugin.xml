@@ -7,13 +7,22 @@
     <!-- https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.marwin1991.intelijgitlabplugin.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.marwin1991.intelijgitlabplugin.services.MyProjectService"/>
-    </extensions>
+    <actions>
+        <action id="GitLabToolWindowToolbar.MergeRequests"
+                text="Caret Position"
+                description="Reports information about the caret position."
+                icon="Icons.MERGE_REQUEST_ICON"
+                class="com.github.marwin1991.intelijgitlabplugin.EditorAreaIllustration"/>
+        <action id="GitLabToolWindowToolbar.ToDo"
+                text="Caret Position"
+                description="Reports information about the caret position."
+                icon="Icons.TODO_ICON"
+                class="com.github.marwin1991.intelijgitlabplugin.EditorAreaIllustration"/>
 
-    <applicationListeners>
-        <listener class="com.github.marwin1991.intelijgitlabplugin.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+    </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="GitLab" secondary="false" icon="AllIcons.General.Modified" anchor="right"
+                    factoryClass="com.github.marwin1991.intelijgitlabplugin.GitLabToolWindowFactory"/>
+    </extensions>
 </idea-plugin>
